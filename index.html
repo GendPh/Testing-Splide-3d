@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+
+  <h1>My First Spline Project</h1>
+  <p>This is so crazy</p>
+
+  <iframe src='https://my.spline.design/untitled-d2ba837143de5e3f4d7550564cf960dc/' frameborder='0' width='100%'
+    height='100%'></iframe>
+
+  <script src="https://unpkg.com/split-type"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+
+  <script>
+    /* const iFrame = document.querySelector("iframe");
+    if (window.innerWidth < 600) {
+      iFrame.src = "https://my.spline.design/untitled-aa23e57112dc0a52045d64405d1a8af0/";
+    } */
+
+    const headLine = new SplitType('h1')
+    const myText2 = new SplitType('p', { charClass: 'char2' })
+    var tl = gsap.timeline({ defaults: { ease: "Expo.easeInOut" } })
+
+    tl.from('.char', {
+      opacity: 0,
+      y: -100,
+      stagger: 0.05,
+      delay: 1
+    })
+      .from('.char2', {
+        opacity: 0,
+        y: -100,
+        stagger: 0.05,
+        duration: .6
+      }, "-=1.2")
+      .to('h1,p', {
+        y: 130,
+        delay: .4,
+        duration: 1.4
+      })
+
+  </script>
+</body>
+
+</html>
